@@ -66,7 +66,8 @@ namespace linear_congruential_generator
             for (int i = 0; i < _m; i++)
             {
                 randomIndex = GetRandomIndex(randomIndex);
-                Console.WriteLine(randomIndex);
+                // Console.WriteLine(randomIndex);
+                
                 // Swap elements
                 T temp = randomizedList[i];
                 randomizedList[i] = randomizedList[randomIndex];

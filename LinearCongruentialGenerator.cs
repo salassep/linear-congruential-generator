@@ -28,7 +28,7 @@ namespace linear_congruential_generator
         /// <returns>The random index number in the sequence.</returns>
         private int GetRandomIndex(int xn)
         {
-            return (_a * xn + _c) % _m;
+            return Math.Abs((_a * xn + _c) % _m);
         }
 
         /// <summary>

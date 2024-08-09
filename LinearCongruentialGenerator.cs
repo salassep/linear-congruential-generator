@@ -15,10 +15,10 @@ namespace linear_congruential_generator
         /// <summary>
         /// Initializes a new instance of the <see cref="LinearCongruentialGenerator"/> class.
         /// </summary>
-        /// <param name="seed">Optional. The seed value for the random number generator. If not provided, defaults to the current system tick count.</param>
+        /// <param name="seed">Optional. The seed value for the random number generator. If not provided, defaults to the random number between 0 - 1000.</param>
         public LinearCongruentialGenerator(int? seed = null)
         {
-            _seed = seed ?? (int)DateTime.Now.Ticks % int.MaxValue;
+            _seed = seed ?? GetRandomSeed();
         }
 
         /// <summary>
@@ -29,6 +29,16 @@ namespace linear_congruential_generator
         private int GetRandomIndex(int xn)
         {
             return (_a * xn + _c) % _m;
+        }
+
+        /// <summary>
+        /// Generates the random seed number between 0 and 1000.
+        /// </summary>
+        /// <returns>Random number between 0 and 1000.</returns>
+        private int GetRandomSeed()
+        {
+            Random random = new Random();
+            return random.Next(0, 1000);
         }
 
         /// <summary>
@@ -55,7 +65,7 @@ namespace linear_congruential_generator
 
             for (int i = 0; i < _m; i++)
             {
-                randomIndex = Math.Abs(GetRandomIndex(randomIndex)) % _m;
+                randomIndex = GetRandomIndex(randomIndex);
                 // Swap elements
                 T temp = randomizedList[i];
                 randomizedList[i] = randomizedList[randomIndex];

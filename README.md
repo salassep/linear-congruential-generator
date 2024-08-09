@@ -1,11 +1,11 @@
 # Linear Congruential Generator
 
-A C# library for randomizing lists using the Linear Congruential Method (LCM). This library is designed to work with lists containing any type of data, from simple strings to complex objects.
+A C# package for randomizing lists using the Linear Congruential Method (LCM). This package is designed to work with lists containing any type of data, from simple strings to complex objects.
 
 ## Features
 
 - Randomizes any list of items (at least 3 elements), whether they are primitive types or complex objects.
-- Defaults the seed to the system tick count if not provided.
+- Defaults the seed to the random number between 0 - 1000 if not provided.
 - Automatically generates `a` and `c` as random prime numbers within the range of the list size.
 
 ## Installation

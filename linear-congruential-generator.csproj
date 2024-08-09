@@ -8,6 +8,7 @@
     <Version>0.1.2</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryUrl>https://github.com/salassep/linear-congruential-generator</RepositoryUrl>
+    <Description>A package for randomizing lists using the Linear Congruential Method (LCM).</Description>
   </PropertyGroup>
 
 </Project>

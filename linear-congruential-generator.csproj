@@ -5,7 +5,7 @@
     <RootNamespace>linear_congruential_generator</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.1.4</Version>
+    <Version>0.1.2</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryUrl>https://github.com/salassep/linear-congruential-generator</RepositoryUrl>
   </PropertyGroup>

@@ -35,20 +35,27 @@ namespace linear_congruential_generator
         /// Randomizes the specified list using the Linear Congruential Method.
         /// </summary>
         /// <typeparam name="T">The type of elements in the list.</typeparam>
-        /// <param name="data">The list of items to randomize.</param>
+        /// <param name="data">The list of items to randomize. The list must contain at least three elements.</param>
         /// <returns>A new list with the elements in a randomized order.</returns>
+        /// <exception cref="ArgumentException">Thrown when the list contains less than 3 elements.</exception>
         public List<T> Randomize<T>(List<T> data)
         {
+            _m = data.Count;
+
+            if (_m < 3)
+            {
+                throw new ArgumentException("The list must contain at least 3 elements.");
+            }
+
             List<T> randomizedList = new List<T>(data);
             int randomIndex = _seed;
 
-            _m = data.Count;
             _a = PrimeNumberGenerator.GetRandomPrime(1, _m);
             _c = PrimeNumberGenerator.GetRandomPrime(1, _m);
 
             for (int i = 0; i < _m; i++)
             {
-                randomIndex = GetRandomIndex(randomIndex);
+                randomIndex = GetRandomIndex(randomIndex) % _m;
                 // Swap elements
                 T temp = randomizedList[i];
                 randomizedList[i] = randomizedList[randomIndex];

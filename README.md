@@ -4,17 +4,37 @@ A C# library for randomizing lists using the Linear Congruential Method (LCM). T
 
 ## Features
 
-- Randomizes any list of items, whether they are primitive types or complex objects.
+- Randomizes any list of items (at least 3 elements), whether they are primitive types or complex objects.
 - Defaults the seed to the system tick count if not provided.
 - Automatically generates `a` and `c` as random prime numbers within the range of the list size.
 
 ## Installation
 
-Add the library to your C# project by including the source files directly or by compiling it into a DLL and referencing it in your project.
+### Prerequisites
+
+Make sure you have the following:
+
+- .NET SDK installed on your machine.
+
+### Installing via terminal
+
+Use the dotnet add package command to add the package to your project:
+
+```csharp
+dotnet add package linear-congruential-generator --source "https://nuget.pkg.github.com/salassep/index.json"
+```
 
 ## Usage
 
-### 1. Instantiate the Randomizer
+### 1. Import the Library
+
+Once the package is installed, you can use it in your project by adding the following using statements:
+
+```csharp
+using linear_congruential_generator;
+```
+
+### 2. Instantiate the Randomizer
 
 You can create an instance of the `LinearCongruentialGenerator` class by providing a seed and the size of the list to be randomized. If you don't provide a seed, it will default to the system's current tick count.
 
@@ -22,7 +42,7 @@ You can create an instance of the `LinearCongruentialGenerator` class by providi
 LinearCongruentialGenerator randomizer = new LinearCongruentialGenerator();
 ```
 
-### 2. Randomize a List
+### 3. Randomize a List
 
 You can randomize a list of any type using the `Randomize` method.
 
